@@ -1,17 +1,21 @@
 import { Link } from "react-router-dom";
 import { Contact } from "lucide-react";
-const Sidebar = () => {
+
+
+const Sidebar = () => { //Hidden on smaller screens, Navbar utilised.
   return (
     <aside className="sticky inset-y-0 left-0 z-50 hidden h-screen sm:block ">
       <div className=" flex h-screen w-52 flex-col bg-gray-800 p-3 shadow">
         <div className="space-y-3 ">
+          {/* LOGO  */}
           <Contact className="h-14 w-14  text-white" />
           <div className="flex items-center text-white ">
-            <h2 className="text-3xl font-bold tracking-tighter  ">
+            <h1 className="text-3xl font-bold tracking-tighter  ">
               Contact Manager
-            </h2>
+            </h1>
           </div>
           <hr />
+          {/* Tab navitgation */}
           <div className="flex-1">
             <ul className="space-y-1 pb-4 pt-2 text-lg ">
               <li className="">

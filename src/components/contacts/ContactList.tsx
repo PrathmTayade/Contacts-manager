@@ -4,6 +4,7 @@ import { RootState } from "../../redux/store";
 import { Contact } from "../../utils/types";
 
 const ContactList = () => {
+  // state from redux
   const contacts = useSelector((state: RootState) => state.contacts.contacts);
 
   return (

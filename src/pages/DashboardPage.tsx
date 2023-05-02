@@ -20,7 +20,7 @@ const MapsChartsPage = () => {
 
         <div className="mt-12 w-full ">
           <h2 className="mb-2 text-lg  font-medium text-gray-900">
-            Today&apos;s Stats
+            Today&apos;s  Worldwide  Stats
           </h2>
           <Stats />
         </div>

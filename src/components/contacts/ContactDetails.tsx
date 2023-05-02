@@ -8,6 +8,7 @@ import { useState } from "react";
 const ContactDetails = ({ contact }: { contact: Contact }) => {
   const dispatch = useAppDispatch();
   const [details, setDetails] = useState(false);
+
   return (
     <div className="w-full  overflow-hidden rounded-lg border bg-white px-2 py-2  shadow-lg  ">
       <div className="flex items-center justify-between px-6  ">
@@ -29,7 +30,8 @@ const ContactDetails = ({ contact }: { contact: Contact }) => {
           {details ? <ChevronUp /> : <ChevronDown />}
         </button>
       </div>
-
+      
+      {/* show/hide more details  */}
       {details ? (
         <div className=" bg-white">
           <div className="  space-y-2 px-6 py-2 ">

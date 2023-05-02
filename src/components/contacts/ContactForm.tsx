@@ -25,11 +25,11 @@ const ContactForm: FC<ContactFormProps> = ({
   const [phone, setPhone] = useState(contact?.phone || "");
   const [isActive, setIsActive] = useState(contact?.isActive || false); // added state for active/inactive toggle
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
 
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault(); // prevent default
     const newContact = {
-      id: contact?.id || nanoid(),
+      id: contact?.id || nanoid(), // id of the new contact
       firstName,
       lastName,
       email,
@@ -38,6 +38,8 @@ const ContactForm: FC<ContactFormProps> = ({
     };
 
     saveContact(newContact);
+
+    //setting the fields to blank
     setFirstName("");
     setLastName("");
     setEmail("");
@@ -45,8 +47,8 @@ const ContactForm: FC<ContactFormProps> = ({
   };
 
   return (
-    // Dialog Modal
 
+    // Dialog Modal
     <Dialog.Root>
       <Dialog.Trigger asChild>
         <div className="flex items-center justify-center">
@@ -73,7 +75,7 @@ const ContactForm: FC<ContactFormProps> = ({
                   className="mb-2 block font-bold text-gray-700"
                   htmlFor="firstName"
                 >
-                  First
+                  First name:
                 </label>
                 <input
                   className="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
@@ -91,7 +93,7 @@ const ContactForm: FC<ContactFormProps> = ({
                   className="mb-2 block font-bold text-gray-700"
                   htmlFor="lastName"
                 >
-                  Last
+                  Last name:
                 </label>
                 <input
                   className="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
@@ -109,7 +111,7 @@ const ContactForm: FC<ContactFormProps> = ({
                 className="mb-2 block font-bold text-gray-700"
                 htmlFor="email"
               >
-                Email
+                Email:
               </label>
               <input
                 className="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
@@ -126,7 +128,7 @@ const ContactForm: FC<ContactFormProps> = ({
                 className="mb-2 block font-bold text-gray-700"
                 htmlFor="phone"
               >
-                Phone
+                Phone:
               </label>
               <input
                 className="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
@@ -139,13 +141,13 @@ const ContactForm: FC<ContactFormProps> = ({
               />
             </div>
 
-            {/* Switch to toggle status */}
+            {/* Switch to toggle status  */}
             <div className="mb-4 ">
               <label
                 className="mb-2 block font-bold text-gray-700"
                 htmlFor="status"
               >
-                Status
+                Status:
               </label>
               <Switch.Root
                 className="relative h-7 w-11 cursor-default rounded-full bg-black/60 shadow-md  outline-none   data-[state=checked]:bg-black"

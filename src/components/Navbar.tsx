@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
+  //Only visible smaller screens for Navigation.
   return (
     <header className=" bg-gray-800 p-6 sm:hidden">
       <div className="flex flex-wrap items-center  justify-between">
@@ -20,8 +21,9 @@ const Navbar = () => {
         </Link>
       </div>
 
+      {/* Tabs for navigation */}
       {show ? (
-        <div className="mt-5 w-full flex flex-col gap-4  ">
+        <nav className="mt-5 w-full flex flex-col gap-4  ">
           <div>
             <Link
               to="contacts"
@@ -38,7 +40,7 @@ const Navbar = () => {
               Dashboard
             </Link>
           </div>
-        </div>
+        </nav>
       ) : null}
     </header>
   );

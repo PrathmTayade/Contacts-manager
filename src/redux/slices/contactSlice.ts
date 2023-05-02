@@ -13,7 +13,7 @@ const initialState: ContactsState = {
       id: "dasdijasd",
       firstName: "John",
       lastName: "Doe",
-      email: "johndoe@gmail.com",
+      email: "johndoe@example.com",
       isActive: true,
       phone: "123456789",
     },
@@ -24,6 +24,7 @@ const contactsSlice = createSlice({
   name: "contacts",
   initialState,
   reducers: {
+    //name defines the functions
     addContact(state, action: PayloadAction<Contact>) {
       state.contacts.push(action.payload);
     },

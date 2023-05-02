@@ -46,6 +46,9 @@ const LineGraph: React.FC = () => {
             <Tooltip />
             <Legend />
             <Line type="monotone" dataKey="Cases" stroke="#8884d8" />
+            
+            {/*  Multiple line graphs for the chart */}
+
             {/* <Line type="monotone" dataKey="Deaths" stroke="#82ca9d" /> */}
             {/* <Line type="monotone" dataKey="Recovered" stroke="#ffc658" /> */}
           </LineChart>
