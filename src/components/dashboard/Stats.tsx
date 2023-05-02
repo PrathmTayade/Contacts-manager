@@ -1,9 +1,8 @@
-import { useQuery, useQueryClient } from "@tanstack/react-query";
-import React from "react";
+import { useQuery } from "@tanstack/react-query";
 import { fetchWorldWideData } from "../../api/api";
 
 const Stats = () => {
-  const { data, isLoading, isError } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ["worldwideData"],
     queryFn: fetchWorldWideData,
   });

@@ -1,4 +1,3 @@
-import { useQueryClient } from "@tanstack/react-query";
 import Leaflet from "../components/dashboard/Leaflet";
 import LineGraph from "../components/dashboard/LineChart";
 import Stats from "../components/dashboard/Stats";
