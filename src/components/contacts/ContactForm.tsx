@@ -5,6 +5,7 @@ import * as Switch from "@radix-ui/react-switch";
 import { FC } from "react";
 import { Contact } from "../../utils/types";
 import { X } from "lucide-react";
+import { set } from "date-fns/esm";
 
 interface ContactFormProps {
   contact?: Contact;
@@ -19,12 +20,12 @@ const ContactForm: FC<ContactFormProps> = ({
   saveContact,
   title,
 }) => {
+  const [isOpen, setIsOpen] = useState(false); // Dialog
   const [firstName, setFirstName] = useState(contact?.firstName || "");
   const [lastName, setLastName] = useState(contact?.lastName || "");
   const [email, setEmail] = useState(contact?.email || "");
   const [phone, setPhone] = useState(contact?.phone || "");
   const [isActive, setIsActive] = useState(contact?.isActive || false); // added state for active/inactive toggle
-
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault(); // prevent default
@@ -39,17 +40,20 @@ const ContactForm: FC<ContactFormProps> = ({
 
     saveContact(newContact);
 
-    //setting the fields to blank
-    setFirstName("");
-    setLastName("");
-    setEmail("");
-    setPhone("");
+    //setting the fields to blank if new contact is created
+    if (!contact) {
+      setFirstName("");
+      setLastName("");
+      setEmail("");
+      setPhone("");
+    }
+
+    setIsOpen(!isOpen); //Close the dialog
   };
 
   return (
-
     // Dialog Modal
-    <Dialog.Root>
+    <Dialog.Root open={isOpen} onOpenChange={setIsOpen}>
       <Dialog.Trigger asChild>
         <div className="flex items-center justify-center">
           <button
@@ -150,7 +154,7 @@ const ContactForm: FC<ContactFormProps> = ({
                 Status:
               </label>
               <Switch.Root
-                className="relative h-7 w-11 cursor-default rounded-full bg-black/60 shadow-md  outline-none   data-[state=checked]:bg-black"
+                className="relative h-7 w-11 cursor-default rounded-full bg-red-500 shadow-md  outline-none   data-[state=checked]:bg-green-500"
                 id="status"
                 checked={isActive}
                 defaultChecked={false}

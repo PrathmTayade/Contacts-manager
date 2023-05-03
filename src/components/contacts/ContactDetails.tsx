@@ -11,7 +11,7 @@ const ContactDetails = ({ contact }: { contact: Contact }) => {
 
   return (
     <div className="w-full  overflow-hidden rounded-lg border bg-white px-2 py-2  shadow-lg  ">
-      <div className="flex items-center justify-between px-6  ">
+      <div className="flex items-center  px-6  ">
         <div className="flex gap-3  ">
           <div className=" text-xl font-semibold capitalize">
             {contact.firstName}
@@ -21,17 +21,23 @@ const ContactDetails = ({ contact }: { contact: Contact }) => {
           </div>
         </div>
 
+        {/* show/hide more details  */}
+
         <button
           type="button"
+          className="flex-1  "
           onClick={() => {
             setDetails(!details);
           }}
         >
-          {details ? <ChevronUp /> : <ChevronDown />}
+          {details ? (
+            <ChevronUp className="ml-auto" />
+          ) : (
+            <ChevronDown className="ml-auto" />
+          )}
         </button>
       </div>
-      
-      {/* show/hide more details  */}
+
       {details ? (
         <div className=" bg-white">
           <div className="  space-y-2 px-6 py-2 ">
