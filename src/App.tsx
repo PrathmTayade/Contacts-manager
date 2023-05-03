@@ -12,7 +12,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 function App() {
-
   // Setting up the routing
   const router = createBrowserRouter([
     {
@@ -20,14 +19,14 @@ function App() {
       children: [
         {
           path: "/",
-          element: <Navigate to={"/contacts"} replace />,
+          element: <Navigate to={"contacts"} replace />,
         },
         {
-          path: "/contacts",
+          path: "contacts",
           element: <ContactsPage />,
         },
         {
-          path: "/dashboard",
+          path: "dashboard",
           element: <MapsChartsPage />,
         },
       ],
