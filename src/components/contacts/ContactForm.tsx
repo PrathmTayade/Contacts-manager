@@ -5,7 +5,6 @@ import * as Switch from "@radix-ui/react-switch";
 import { FC } from "react";
 import { Contact } from "../../utils/types";
 import { X } from "lucide-react";
-import { set } from "date-fns/esm";
 
 interface ContactFormProps {
   contact?: Contact;
