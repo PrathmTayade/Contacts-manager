@@ -14,6 +14,23 @@ To run the app locally, follow these steps:
 
 5\. Open your browser and navigate to `http://localhost:5173/` to view the app.
 
+
+## Technologies Used
+
+- React
+
+- TypeScript
+
+- Tailwind CSS
+
+- Leaflet
+
+- Recharts
+
+- React Query
+
+- Redux
+
 The app consists of two main components: Contacts page and Dashboard page consisting of a line chart and a map component. The line chart displays the number of COVID-19 cases over time, while the map displays the locations of countries with COVID-19 cases, along with the number of active, recovered, and deceased cases.The stats show the current world cases.
 
 ## APIs
